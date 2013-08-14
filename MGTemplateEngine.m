@@ -413,7 +413,7 @@
 	templateContents = [templateString retain];
 	_templateLength = [templateString length];
 	[_templateVariables release];
-	_templateVariables = [variables deepMutableCopy];
+	_templateVariables = [[variables deepMutableCopy] retain];
 	remainingRange = NSMakeRange(0, [templateString length]);
 	_literal = NO;
 	

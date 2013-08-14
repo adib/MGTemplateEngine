@@ -17,15 +17,16 @@
     unsigned int index, count;
 	
     count = [self count];
-    newArray = [[NSMutableArray allocWithZone:[self zone]] initWithCapacity:count];
+    // this method does not _begin_ with "mutableCopy" and thus need to return an autoreleased object
+    // http://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmRules.html#//apple_ref/doc/uid/20000994-BAJHFBGH
+    newArray = [[[NSMutableArray allocWithZone:[self zone]] initWithCapacity:count] autorelease];
     for (index = 0; index < count; index++) {
         id anObject;
 		
         anObject = [self objectAtIndex:index];
         if ([anObject respondsToSelector:@selector(deepMutableCopy)]) {
-            anObject = [anObject deepMutableCopy];
+            anObject = [anObject deepMutableCopy]; // should return an autoreleased object
             [newArray addObject:anObject];
-            [anObject release];
         } else if ([anObject respondsToSelector:@selector(mutableCopyWithZone:)]) {
             anObject = [anObject mutableCopyWithZone:nil];
             [newArray addObject:anObject];
