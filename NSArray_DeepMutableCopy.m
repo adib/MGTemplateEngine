@@ -14,7 +14,7 @@
 - (NSMutableArray *)deepMutableCopy;
 {
     NSMutableArray *newArray;
-    unsigned int index, count;
+    NSUInteger index, count;
 	
     count = [self count];
     // this method does not _begin_ with "mutableCopy" and thus need to return an autoreleased object

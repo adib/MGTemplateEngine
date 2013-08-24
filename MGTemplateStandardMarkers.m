@@ -158,7 +158,7 @@
 			BOOL valid = NO;
 			NSString *startArg = [args objectAtIndex:0];
 			NSString *endArg = [args objectAtIndex:2];
-			int startIndex, endIndex;
+			NSUInteger startIndex, endIndex;
 			if (isRange) {
 				// Check to see if either the arg itself is numeric, or it corresponds to a numeric variable.
 				valid = [self argIsNumeric:startArg intValue:&startIndex checkVariables:YES];
@@ -194,11 +194,11 @@
 				[forStack addObject:stackFrame];
 				
 				// Set up variables for the block.
-				int currentIndex = (reversed) ? endIndex : startIndex;
+				NSUInteger currentIndex = (reversed) ? endIndex : startIndex;
 				NSMutableDictionary *loopVars = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-												 [NSNumber numberWithInt:startIndex], FOR_LOOP_START_INDEX, 
-												 [NSNumber numberWithInt:endIndex], FOR_LOOP_END_INDEX, 
-												 [NSNumber numberWithInt:currentIndex], FOR_LOOP_CURR_INDEX, 
+												 [NSNumber numberWithInteger:startIndex], FOR_LOOP_START_INDEX,
+												 [NSNumber numberWithInteger:endIndex], FOR_LOOP_END_INDEX,
+												 [NSNumber numberWithInteger:currentIndex], FOR_LOOP_CURR_INDEX,
 												 [NSNumber numberWithBool:reversed], FOR_REVERSE, 
 												 nil];
 				NSMutableDictionary *blockVars = [NSMutableDictionary dictionaryWithObjectsAndKeys:
@@ -359,7 +359,7 @@
 				NSString *secondArg = [args objectAtIndex:2];
 				BOOL firstTrue = [self argIsTrue:firstArg];
 				BOOL secondTrue = [self argIsTrue:secondArg];
-				int num1, num2;
+				NSInteger num1, num2;
 				BOOL firstNumeric, secondNumeric;
 				firstNumeric = [self argIsNumeric:firstArg intValue:&num1 checkVariables:YES];
 				secondNumeric = [self argIsNumeric:secondArg intValue:&num2 checkVariables:YES];
@@ -591,7 +591,7 @@
 }
 
 
-- (BOOL)argIsNumeric:(NSString *)arg intValue:(int *)val checkVariables:(BOOL)checkVars
+- (BOOL)argIsNumeric:(NSString *)arg intValue:(NSInteger *)val checkVariables:(BOOL)checkVars
 {
 	BOOL numeric = NO;
 	int value = 0;
