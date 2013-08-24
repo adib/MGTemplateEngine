@@ -38,6 +38,16 @@
                ReferencedContainer = "container:MGTemplateEngine.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C01D85C217C8F6F50074C3CF"
+               BuildableName = "TemplateEngineTests.xctest"
+               BlueprintName = "TemplateEngineTests"
+               ReferencedContainer = "container:MGTemplateEngine.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
