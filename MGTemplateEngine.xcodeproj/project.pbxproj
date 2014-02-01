@@ -23,7 +23,7 @@
 		C01D85CE17C8F6F60074C3CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C01D85CC17C8F6F60074C3CF /* InfoPlist.strings */; };
 		C01D85D017C8F6F60074C3CF /* TemplateEngineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C01D85CF17C8F6F60074C3CF /* TemplateEngineTests.m */; };
 		C01D85D717C8F70A0074C3CF /* MGTemplateEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D870100DE1FD2700F0B62A /* MGTemplateEngine.m */; };
-		C01D85D817C8F7120074C3CF /* MGTemplateEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = C9D8700F0DE1FD2700F0B62A /* MGTemplateEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C01D85D817C8F7120074C3CF /* MGTemplateEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = C9D8700F0DE1FD2700F0B62A /* MGTemplateEngine.h */; };
 		C01D85D917C8F7120074C3CF /* MGTemplateMarker.h in Headers */ = {isa = PBXBuildFile; fileRef = C9D870120DE1FD2700F0B62A /* MGTemplateMarker.h */; };
 		C01D85DA17C8F7120074C3CF /* MGTemplateFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = C9D870110DE1FD2700F0B62A /* MGTemplateFilter.h */; };
 		C01D85DB17C8F7120074C3CF /* MGTemplateStandardMarkers.h in Headers */ = {isa = PBXBuildFile; fileRef = C9D870150DE1FD2700F0B62A /* MGTemplateStandardMarkers.h */; };
@@ -98,6 +98,7 @@
 		32CA4F630368D1EE00C91783 /* MGTemplateEngine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTemplateEngine_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* MGTemplateEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGTemplateEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C00232FB189929380073766D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C01D85B617C8F6F50074C3CF /* libTemplateEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTemplateEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01D85B717C8F6F50074C3CF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		C01D85BB17C8F6F50074C3CF /* TemplateEngine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TemplateEngine-Prefix.pch"; sourceTree = "<group>"; };
@@ -279,6 +280,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C00232FB189929380073766D /* StoreKit.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				C06BD68817B9E7DA004CB1F8 /* Foundation.framework */,
 				C06BD69617B9E7DA004CB1F8 /* XCTest.framework */,
@@ -435,8 +437,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C01D85DA17C8F7120074C3CF /* MGTemplateFilter.h in Headers */,
-				C01D85D917C8F7120074C3CF /* MGTemplateMarker.h in Headers */,
 				C01D85D817C8F7120074C3CF /* MGTemplateEngine.h in Headers */,
+				C01D85D917C8F7120074C3CF /* MGTemplateMarker.h in Headers */,
 				C01D85DD17C8F7120074C3CF /* MGTemplateStandardFilters.h in Headers */,
 				C01D85DB17C8F7120074C3CF /* MGTemplateStandardMarkers.h in Headers */,
 			);
@@ -898,6 +900,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = MGTemplateEngine;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -913,6 +916,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = MGTemplateEngine;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -926,6 +930,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -937,6 +942,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
